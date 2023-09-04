@@ -1,5 +1,5 @@
 {
-  description = "A nixvim configuration";
+  description = "Personal NixVim Config";
 
   inputs = {
     nixvim.url = "github:nix-community/nixvim";
@@ -27,7 +27,7 @@
         # Run `nix flake check .` to verify that your config is not broken
         default = nixvimLib.check.mkTestDerivationFromNvim {
           inherit nvim;
-          name = "A nixvim configuration";
+          name = "Personal NixVim Config";
         };
       };
 
