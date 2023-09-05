@@ -1,5 +1,8 @@
 {
 
+  config = {
+
+
 	globals = {
 	  mapleader = " ";
 	  maplocalleader = "\\";
@@ -61,4 +64,5 @@
 		providers.xclip.enable = true;
 	};
 
+  };
 }
