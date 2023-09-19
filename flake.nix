@@ -27,6 +27,7 @@
         # Run `nix flake check .` to verify that your config is not broken
         default = nixvimLib.check.mkTestDerivationFromNvim {
           inherit nvim;
+          specialArgs = nixvimLib;
           name = "Personal NixVim Config";
         };
       };
