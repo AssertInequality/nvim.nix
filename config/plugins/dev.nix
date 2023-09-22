@@ -40,6 +40,10 @@
       };
     };
 
+    lsp-format = {
+      enable = true;
+    };
+
     nvim-cmp = {
       enable = true;
       mapping = {
@@ -116,6 +120,8 @@
     };
 
     noice.enable = true;
+    trouble.enable = true;
+    fugitive.enable = true;
 
 
   };
