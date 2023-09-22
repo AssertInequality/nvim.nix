@@ -85,6 +85,9 @@
       mapleader = " ";
       maplocalleader = "\\";
       markdown_recommended_style = 0;
+      netrw_browse_split = 0;
+      netrw_banner = 0;
+      netrw_winsize = 25;
     };
 
     options = {
@@ -103,10 +106,10 @@
       list = true;
       mouse = "a";
       number = true;
+      relativenumber = true;
       pumblend = 10;
       pumheight = 10;
-      relativenumber = true;
-      scrolloff = 4;
+      scrolloff = 8;
       sessionoptions.__raw = ''{ "buffers", "curdir", "tabpages", "winsize" }'';
       shiftround = true;
       shiftwidth = 2;
@@ -119,15 +122,22 @@
       splitbelow = true;
       splitright = true;
       tabstop = 2;
+      softtabstop = 2;
       termguicolors = true;
       timeoutlen = 300;
-      undofile = true;
-      undolevels = 10000;
       updatetime = 200;
       wildmode = "longest:full,full";
       winminwidth = 5;
       splitkeep = "screen";
       wrap = false;
+      swapfile = false;
+      backup = false;
+      undodir.__raw = ''os.getenv("HOME") .. "/.vim/undodir"'';
+      undofile = true;
+      undolevels = 10000;
+      hlsearch = false;
+      incsearch = true;
+      colorcolumn = "80";
     };
 
     colorschemes.nord = {
