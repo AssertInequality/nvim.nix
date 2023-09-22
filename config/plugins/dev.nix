@@ -4,7 +4,7 @@
     treesitter = {
       enable = true;
       ensureInstalled = [
-        "help"
+        "vimdoc"
         "nix"
         "lua"
         "vim"
@@ -16,7 +16,6 @@
         "markdown"
         "markdown_inline"
       ];
-      folding = true;
       indent = true;
       nixvimInjections = true;
     };
