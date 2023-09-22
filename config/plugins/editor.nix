@@ -1,22 +1,11 @@
 {
-    plugins = {
+  plugins = {
 
-      harpoon = {
-          enable = true;
-      };
+    undotree = {
+      enable = true;
+      focusOnToggle = true;
+    };
 
-      telescope = {
-          enable = true;
-          keymaps = {
-            "<leader>pf" = {
-              action = "find_files";
-              desc = "find files";
-            };
-            "<C-p>" = {
-              action = "git_files";
-              desc = "find files in git";
-            };
-          };
     harpoon = {
       enable = true;
       keymaps ={
