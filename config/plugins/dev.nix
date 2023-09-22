@@ -28,6 +28,9 @@
       servers = {
         nil_ls = {
           enable = true;
+          extraOptions = {
+            formatting.__raw = ''{ command = { "nixpkgs-fmt" } }'';
+          };
         };
         lua-ls = {
           enable = true;
