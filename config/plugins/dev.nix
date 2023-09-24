@@ -31,12 +31,9 @@
             formatting.__raw = ''{ command = { "nixpkgs-fmt" } }'';
           };
         };
-        lua-ls = {
-          enable = true;
-        };
-        tsserver = {
-          enable = true;
-        };
+        lua-ls.enable = true;
+        tsserver.enable = true;
+        texlab.enable = true;
       };
     };
 
@@ -71,6 +68,7 @@
     cmp-buffer.enable = true;
     cmp-path.enable = true;
     cmp_luasnip.enable = true;
+    cmp-latex-symbols.enable = true;
 
     ts-context-commentstring.enable = true;
 
