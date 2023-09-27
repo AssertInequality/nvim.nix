@@ -121,6 +121,10 @@
     trouble.enable = true;
     fugitive.enable = true;
 
+    comment-nvim = {
+      enable = true;
+      sticky = true;
+    };
 
   };
 }
