@@ -56,6 +56,7 @@
             select = true,
             })'';
       };
+      snippet.expand = "luasnip";
       sources = [
       { name = "nvim_lsp"; }
       { name = "luasnip"; }
@@ -70,6 +71,7 @@
     cmp_luasnip.enable = true;
     cmp-latex-symbols.enable = true;
 
+    ts-autotag.enable = true;
     ts-context-commentstring.enable = true;
 
     mini = {
@@ -124,6 +126,12 @@
     comment-nvim = {
       enable = true;
       sticky = true;
+    };
+
+    emmet = {
+      enable = true;
+      mode = "i";
+      leader = "<C-y>";
     };
 
   };
