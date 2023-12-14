@@ -21,6 +21,12 @@
           desc = "NetRW";
         };
 
+        "<leader>b".desc = "Buffer";
+        "<leader>bc" = {
+          action = "<cmd>bd<CR>";
+          desc = "close buffer";
+        };
+
         ### Cursor Control
         "J" = "mzJ`z";
         "<C-d>" = "<C-d>zz";

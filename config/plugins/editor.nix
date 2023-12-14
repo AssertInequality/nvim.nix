@@ -23,6 +23,10 @@
           action = "find_files";
           desc = "find files";
         };
+        "<leader>bl" = {
+          action = "buffers";
+          desc = "list open buffers";
+        };
         "<C-p>" = {
           action = "git_files";
           desc = "find files in git";
