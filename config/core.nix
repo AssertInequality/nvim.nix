@@ -26,6 +26,14 @@
           action = "<cmd>bd<CR>";
           desc = "close buffer";
         };
+        "<leader>bn" = {
+          action = "<cmd>bn<CR>";
+          desc = "next buffer";
+        };
+        "<leader>bp" = {
+          action = "<cmd>bp<CR>";
+          desc = "previous buffer";
+        };
 
         ### Cursor Control
         "J" = "mzJ`z";
