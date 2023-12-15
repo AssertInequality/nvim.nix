@@ -117,6 +117,8 @@
 
     lualine = {
       enable = true;
+      globalstatus = true;
+      sections.lualine_c = ["buffers"];
     };
 
     noice.enable = true;
