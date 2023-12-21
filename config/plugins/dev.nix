@@ -24,6 +24,22 @@
 
     lsp = {
       enable = true;
+      keymaps = {
+        diagnostic = {
+          "<leader>cf" = "open_float";
+          "[d" = "goto_prev";
+          "]d" = "goto_next";
+        };
+        lspBuf = {
+          "gd" = "definition";
+          "gD" = "references";
+          "K" = "hover";
+          "<leader>cs" = "workspace_symbol";
+          "<leader>ca" = "code_action";
+          "<leader>cr" = "rename";
+          "<leader>ch" = "signature_help";
+        };
+      };
       servers = {
         nil_ls = {
           enable = true;
