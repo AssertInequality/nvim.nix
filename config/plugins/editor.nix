@@ -18,6 +18,9 @@
 
     telescope = {
       enable = true;
+      extraOptions.defaults = {
+        "file_ignore_patterns".__raw = ''{"node_modules"}'';
+      };
       keymaps = {
         "<leader>pf" = {
           action = "find_files";

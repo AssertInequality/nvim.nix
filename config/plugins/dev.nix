@@ -136,7 +136,7 @@
     lualine = {
       enable = true;
       globalstatus = true;
-      sections.lualine_c = ["buffers"];
+      sections.lualine_c = ["filename" "buffers"];
     };
 
     noice.enable = true;
