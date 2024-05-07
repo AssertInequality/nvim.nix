@@ -50,6 +50,8 @@
         lua-ls.enable = true;
         tsserver.enable = true;
         texlab.enable = true;
+        pylsp.enable = true;
+        bashls.enable = true;
       };
     };
 
