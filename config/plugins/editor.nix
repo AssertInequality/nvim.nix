@@ -1,6 +1,8 @@
 {
   plugins = {
 
+    nvim-colorizer.enable = true;
+
     undotree = {
       enable = true;
       focusOnToggle = true;
