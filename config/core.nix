@@ -17,12 +17,6 @@
         options.desc = "Save";
         action = "<cmd>w<CR>";
       }
-      {
-        mode = ["n"];
-        key = "<leader>pv";
-        options.desc = "NetRW";
-        action = "<cmd>Ex<CR>";
-      }
       # Buffer Operations
       {
         mode = ["n"];
@@ -106,6 +100,12 @@
           end'';
         options.desc = "Grep String";
         lua = true;
+      }
+      {
+        mode = ["n"];
+        key = "<leader>pv";
+        action = "<cmd>Telescope file_browser<CR>";
+        options.desc = "File Browser";
       }
       # PLUGIN : Unfotree
       {

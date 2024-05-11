@@ -22,6 +22,7 @@
       enable = true;
       settings.defaults = {
         "file_ignore_patterns".__raw = ''{"node_modules"}'';
+        "initial_mode" = "normal";
       };
       keymaps = {
         "<leader>pf" = {
@@ -35,6 +36,19 @@
         "<C-p>" = {
           action = "git_files";
           options.desc = "find files in git";
+        };
+      };
+      extensions.file-browser = {
+        enable = true;
+        settings = {
+          hijack_netrw = true;
+          sorting_strategy = "ascending";
+          layout_config = {
+            horizontal = {
+              prompt_position = "top";
+              preview_width = 0.7;
+            };
+          };
         };
       };
     };
