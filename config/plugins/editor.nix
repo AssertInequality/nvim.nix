@@ -5,7 +5,7 @@
 
     undotree = {
       enable = true;
-      focusOnToggle = true;
+      settings.FocusOnToggle = true;
     };
 
     harpoon = {
@@ -20,21 +20,21 @@
 
     telescope = {
       enable = true;
-      extraOptions.defaults = {
+      settings.defaults = {
         "file_ignore_patterns".__raw = ''{"node_modules"}'';
       };
       keymaps = {
         "<leader>pf" = {
           action = "find_files";
-          desc = "find files";
+          options.desc = "find files";
         };
         "<leader>bl" = {
           action = "buffers";
-          desc = "list open buffers";
+          options.desc = "list open buffers";
         };
         "<C-p>" = {
           action = "git_files";
-          desc = "find files in git";
+          options.desc = "find files in git";
         };
       };
     };

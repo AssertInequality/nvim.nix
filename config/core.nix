@@ -2,98 +2,130 @@
 
   config = {
 
-    maps = {
-      normal = {
-        "<leader>f".desc = "File";
-        "<leader>ff" = {
-          desc = "Format";
-          action = "vim.lsp.buf.format";
-          lua = true;
-        };
-        "<leader>fs" = {
-          desc = "Save";
-          action = "<cmd>w<CR>";
-        };
-
-        "<leader>p".desc = "Project";
-        "<leader>pv" = {
-          action = "<cmd>Ex<CR>";
-          desc = "NetRW";
-        };
-
-        "<leader>b".desc = "Buffer";
-        "<leader>bc" = {
-          action = "<cmd>bd<CR>";
-          desc = "close buffer";
-        };
-        "<leader>bn" = {
-          action = "<cmd>bn<CR>";
-          desc = "next buffer";
-        };
-        "<leader>bp" = {
-          action = "<cmd>bp<CR>";
-          desc = "previous buffer";
-        };
-
-        ### Cursor Control
-        "J" = "mzJ`z";
-        "<C-d>" = "<C-d>zz";
-        "<C-u>" = "<C-u>zz";
-        "n" = "nzzzv";
-        "N" = "Nzzzv";
-
-        ### Tmux Sessionizer
-        "<leader>po" = {
-          action = "<cmd>silent !tmux neww tmux-sessionizer<CR>";
-          desc = "Open Project";
-        };
-
-        ### Quickfix Navigation
-        "<C-k>" = "<cmd>cnext<CR>zz";
-        "<C-j>" = "<cmd>cprev<CR>zz";
-        "<C-S-k>" = "<cmd>lnext<CR>zz";
-        "<C-S-j>" = "<cmd>lprev<CR>zz";
-
-        ### PLUGIN : Fugitive
-        "<leader>g".desc = "Git";
-        "<leader>gs" = {
-          action = "<cmd>G<CR>";
-          desc = "Status";
-        };
-
-
-        ### PLUGIN : Harpoon
-        "<leader>h".desc = "Harpoon";
-        "<leader>ha".desc = "Add File";
-        "<leader>hq".desc = "Quick Menu";
-        "<leader>hn".desc = "Next File";
-        "<leader>hp".desc = "Previous File";
-
-        ### PLUGIN : Telescope
-        "<leader>ps" = {
-          action = ''
+    keymaps = [
+      # File Operations
+      {
+        mode = ["n"];
+        key = "<leader>ff";
+        action = "vim.lsp.buf.format";
+        lua = true;
+        options.desc = "Format";
+      }
+      {
+        mode = ["n"];
+        key = "<leader>fs";
+        options.desc = "Save";
+        action = "<cmd>w<CR>";
+      }
+      {
+        mode = ["n"];
+        key = "<leader>pv";
+        options.desc = "NetRW";
+        action = "<cmd>Ex<CR>";
+      }
+      # Buffer Operations
+      {
+        mode = ["n"];
+        key = "<leader>bc";
+        options.desc = "Close Buffer";
+        action = "<cmd>bd<CR>";
+      }
+      {
+        mode = ["n"];
+        key = "<leader>bn";
+        options.desc = "Next Buffer";
+        action = "<cmd>bn<CR>";
+      }
+      {
+        mode = ["n"];
+        key = "<leader>bp";
+        options.desc = "Previous Buffer";
+        action = "<cmd>bp<CR>";
+      }
+      # Cursor Movement
+      {
+        mode = ["n"];
+        key = "J";
+        action = "mzJ`z";
+      }
+      {
+        mode = ["n"];
+        key = "<C-d>";
+        action = "<C-d>zz";
+      }
+      {
+        mode = ["n"];
+        key = "<C-u>";
+        action = "<C-u>zz";
+      }
+      {
+        mode = ["n"];
+        key = "n";
+        action = "nzzzv";
+      }
+      {
+        mode = ["n"];
+        key = "N";
+        action = "Nzzzv";
+      }
+      # Quickfix Navigation
+      {
+        mode = ["n"];
+        key = "<C-k>";
+        action = "<cmd>cnext<CR>zz";
+      }
+      {
+        mode = ["n"];
+        key = "<C-j>";
+        action = "<cmd>cprev<CR>zz";
+      }
+      {
+        mode = ["n"];
+        key = "<C-S-k>";
+        action = "<cmd>lnext<CR>zz";
+      }
+      {
+        mode = ["n"];
+        key = "<C-S-j>";
+        action = "<cmd>lprev<CR>zz";
+      }
+      # PLUGIN : Fugitive
+      {
+        mode = ["n"];
+        key = "<leader>gs";
+        action = "<cmd>G<CR>";
+        options.desc = "Status";
+      }
+      # PLUGIN : Telescope
+      {
+        mode = ["n"];
+        key = "<leader>ps";
+        action = ''
           function()
-            require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") });
-          end
-          '';
-          desc = "Grep String";
-          lua = true;
-        };
-
-        ### PLUGIN : Unfotree
-        "<leader>u" = {
-          action = "<cmd>UndotreeToggle<CR>";
-          desc = "Undotree Toggle";
-        };
-      };
-
-      visual = {
-        ### Moving lines up and down
-        "J" = "<cmd>m '>+1<CR>gv=gv";
-        "K" = "<cmd>m '<-2<CR>gv=gv";
-      };
-
-    };
+          require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") });
+          end'';
+        options.desc = "Grep String";
+        lua = true;
+      }
+      # PLUGIN : Unfotree
+      {
+        mode = ["n"];
+        key = "<leader>u";
+        action = "<cmd>UndotreeToggle<CR>";
+        options.desc = "Undotree Toggle";
+      }
+      ## VISUAL: Move lines up and down
+      {
+        mode = ["v"];
+        key = "J";
+        action = "<cmd>m '>+1<CR>gv=gv";
+      }
+      {
+        mode = ["v"];
+        key = "K";
+        action = "<cmd>m '<-2<CR>gv=gv";
+      }
+    ];
 
     globals = {
       mapleader = " ";
@@ -104,7 +136,7 @@
       netrw_winsize = 25;
     };
 
-    options = {
+    opts = {
       autowrite = true;
       completeopt = "menu,menuone,noselect";
       conceallevel = 3;
@@ -156,9 +188,11 @@
 
     colorschemes.nord = {
       enable = true;
-      borders = true;
-      disable_background = true;
-      italic = true;
+      settings = {
+        borders = true;
+        disable_background = true;
+        italic = true;
+      };
     };
 
     clipboard = {

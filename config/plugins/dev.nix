@@ -59,28 +59,34 @@
       enable = true;
     };
 
-    nvim-cmp = {
+    cmp = {
       enable = true;
-      mapping = {
-        "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })";
-        "<C-p>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })";
-        "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-        "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        "<C-Space>" = "cmp.mapping.complete()";
-        "<C-e>" = "cmp.mapping.abort()";
-        "<CR>" = "cmp.mapping.confirm({ select = true })";
-        "<S-CR>" = ''cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-            })'';
+      settings = {
+        mapping = {
+          "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })";
+          "<C-p>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })";
+          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<C-e>" = "cmp.mapping.abort()";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<S-CR>" = ''cmp.mapping.confirm({
+              behavior = cmp.ConfirmBehavior.Replace,
+              select = true,
+              })'';
+        };
+        sources = [
+        { name = "nvim_lsp"; }
+        { name = "luasnip"; }
+        { name = "path"; }
+        { name = "buffer"; }
+        ];
+        snippet.expand = ''
+          function(args)
+          require('luasnip').lsp_expand(args.body)
+          end
+          '';
       };
-      snippet.expand = "luasnip";
-      sources = [
-      { name = "nvim_lsp"; }
-      { name = "luasnip"; }
-      { name = "buffer"; }
-      { name = "path"; }
-      ];
     };
 
     cmp-nvim-lsp.enable = true;
@@ -143,15 +149,17 @@
     trouble.enable = true;
     fugitive.enable = true;
 
-    comment-nvim = {
+    comment = {
       enable = true;
-      sticky = true;
+      settings.sticky = true;
     };
 
     emmet = {
       enable = true;
-      mode = "i";
-      leader = "<C-y>";
+      settings = {
+        mode = "i";
+        leader_key = "<C-y>";
+      };
     };
 
   };
