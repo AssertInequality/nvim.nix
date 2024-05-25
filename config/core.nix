@@ -115,6 +115,13 @@
         action = "<cmd>Oil<CR>";
         options.desc = "File Browser";
       }
+      # PLUGIN : LazyGit
+      {
+        mode = ["n"];
+        key = "<leader>gl";
+        action = "<cmd>LazyGit<CR>";
+        options.desc = "LazyGit";
+      }
       ## VISUAL: Move lines up and down
       {
         mode = ["v"];

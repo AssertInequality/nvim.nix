@@ -2,6 +2,7 @@
   plugins = {
 
     nvim-colorizer.enable = true;
+    lazygit.enable = true;
 
     undotree = {
       enable = true;
