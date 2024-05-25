@@ -38,18 +38,19 @@
           options.desc = "find files in git";
         };
       };
-      extensions.file-browser = {
-        enable = true;
-        settings = {
-          hijack_netrw = true;
-          sorting_strategy = "ascending";
-          layout_config = {
-            horizontal = {
-              prompt_position = "top";
-              preview_width = 0.7;
-            };
-          };
-        };
+    };
+
+    oil = {
+      enable = true;
+      settings = {
+        constrain_cursor = "editable";
+        default_file_explorer = true;
+        columns = [
+          "type"
+          "size"
+          "permissions"
+          "icon"
+        ];
       };
     };
 

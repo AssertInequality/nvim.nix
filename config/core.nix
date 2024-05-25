@@ -101,18 +101,19 @@
         options.desc = "Grep String";
         lua = true;
       }
-      {
-        mode = ["n"];
-        key = "<leader>pv";
-        action = "<cmd>Telescope file_browser<CR>";
-        options.desc = "File Browser";
-      }
       # PLUGIN : Unfotree
       {
         mode = ["n"];
         key = "<leader>u";
         action = "<cmd>UndotreeToggle<CR>";
         options.desc = "Undotree Toggle";
+      }
+      # PLUGIN : Oil
+      {
+        mode = ["n"];
+        key = "-";
+        action = "<cmd>Oil<CR>";
+        options.desc = "File Browser";
       }
       ## VISUAL: Move lines up and down
       {
