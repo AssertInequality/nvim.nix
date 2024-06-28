@@ -52,6 +52,7 @@
         texlab.enable = true;
         pylsp.enable = true;
         bashls.enable = true;
+        intelephense.enable = true;
       };
     };
 
@@ -157,8 +158,8 @@
     emmet = {
       enable = true;
       settings = {
-        mode = "i";
-        leader_key = "<C-y>";
+        mode = "a";
+        leader_key = "<C-e>";
       };
     };
 
