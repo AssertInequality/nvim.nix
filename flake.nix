@@ -2,8 +2,11 @@
   description = "Personal NixVim Config";
 
   inputs = {
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-24.05";
+    };
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils = {
@@ -17,7 +20,7 @@
     nixvim,
     flake-utils,
     ...
-  } @ inputs: let
+  }: let
     config = import ./config; # import the module directly
   in
     flake-utils.lib.eachDefaultSystem (system: let
@@ -26,19 +29,11 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-      nixvim' = nixvim.legacyPackages.${system};
-      nvim = nixvim'.makeNixvimWithModule {
-        inherit pkgs;
-        module = config;
-      };
     in {
       nixosModules = {
-        nixVimModule ={pkgs}: {
+        nixVimModule = {pkgs, ...}: {
           environment.systemPackages = [(
-            nixvim'.makeNixvimWithModule {
-              inherit pkgs;
-              module = config;
-            }
+            pkgs.callPackage ./package { inherit nixvim config; }
           )];
         };
       };
@@ -46,7 +41,7 @@
       checks = {
         # Run `nix flake check .` to verify that your config is not broken
         default = nixvimLib.check.mkTestDerivationFromNvim {
-          inherit nvim;
+          nvim = pkgs.callPackage ./package { inherit nixvim pkgs system config; };
           specialArgs = nixvimLib;
           name = "Personal NixVim Config";
         };
@@ -54,7 +49,7 @@
 
       packages = {
         # Lets you run `nix run .` to start nixvim
-        default = nvim;
+        default = pkgs.callPackage ./package { inherit nixvim pkgs system config; };
       };
     });
 }
