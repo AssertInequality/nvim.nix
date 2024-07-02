@@ -22,13 +22,27 @@
   in
     flake-utils.lib.eachDefaultSystem (system: let
       nixvimLib = nixvim.lib.${system};
-      pkgs = import nixpkgs {inherit system;};
+      pkgs = import nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
       nixvim' = nixvim.legacyPackages.${system};
       nvim = nixvim'.makeNixvimWithModule {
         inherit pkgs;
         module = config;
       };
     in {
+      nixosModules = {
+        nixVimModule ={pkgs}: {
+          environment.systemPackages = [(
+            nixvim'.makeNixvimWithModule {
+              inherit pkgs;
+              module = config;
+            }
+          )];
+        };
+      };
+
       checks = {
         # Run `nix flake check .` to verify that your config is not broken
         default = nixvimLib.check.mkTestDerivationFromNvim {
