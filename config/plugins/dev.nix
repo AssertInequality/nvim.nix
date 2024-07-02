@@ -41,7 +41,7 @@
         };
       };
       servers = {
-        nil_ls = {
+        nil-ls = {
           enable = true;
           extraOptions = {
             formatting.__raw = ''{ command = { "nixpkgs-fmt" } }'';

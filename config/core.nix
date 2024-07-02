@@ -7,8 +7,7 @@
       {
         mode = ["n"];
         key = "<leader>ff";
-        action = "vim.lsp.buf.format";
-        lua = true;
+        action.__raw = "vim.lsp.buf.format";
         options.desc = "Format";
       }
       {
@@ -94,12 +93,11 @@
       {
         mode = ["n"];
         key = "<leader>ps";
-        action = ''
+        action.__raw = ''
           function()
           require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") });
           end'';
         options.desc = "Grep String";
-        lua = true;
       }
       # PLUGIN : Unfotree
       {
