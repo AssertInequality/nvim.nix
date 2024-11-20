@@ -12,6 +12,7 @@
         "<leader>f" = "File";
         "<leader>p" = "Project";
         "<leader>b" = "Buffer";
+        "<leader>c" = "Code";
         "<leader>g" = "Git";
         "<leader>h" = "Harpoon";
         "<leader>ha" = "Add File";

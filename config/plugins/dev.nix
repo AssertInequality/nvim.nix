@@ -26,7 +26,10 @@
       enable = true;
       keymaps = {
         diagnostic = {
-          "<leader>cf" = "open_float";
+          "<leader>cf" = {
+            action = "open_float";
+            desc = "Open Error Float";
+          };
           "[d" = "goto_prev";
           "]d" = "goto_next";
         };
@@ -34,10 +37,22 @@
           "gd" = "definition";
           "gD" = "references";
           "K" = "hover";
-          "<leader>cs" = "workspace_symbol";
-          "<leader>ca" = "code_action";
-          "<leader>cr" = "rename";
-          "<leader>ch" = "signature_help";
+          "<leader>cs" = {
+            action = "workspace_symbol";
+            desc = "Symbol";
+          };
+          "<leader>ca" = {
+            action = "code_action";
+            desc = "Action";
+          };
+          "<leader>cr" = {
+            action = "rename";
+            desc = "Rename";
+          };
+          "<leader>ch" = {
+            action = "signature_help";
+            desc = "Signature Help";
+          };
         };
       };
       servers = {
