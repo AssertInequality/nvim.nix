@@ -3,6 +3,19 @@
   config = {
 
     keymaps = [
+      # Editor Operations
+      {
+        mode = [ "n" ];
+        key = "<leader>qa";
+        action = "<cmd>qa!<CR>";
+        options.desc = "Abort and Quit";
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>qs";
+        action = "<cmd>wqa<CR>";
+        options.desc = "Save All and Quit";
+      }
       # File Operations
       {
         mode = [ "n" ];

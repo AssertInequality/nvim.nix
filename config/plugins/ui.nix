@@ -14,6 +14,7 @@
         "<leader>b" = "Buffer";
         "<leader>c" = "Code";
         "<leader>g" = "Git";
+        "<leader>q" = "Quit";
         "<leader>h" = "Harpoon";
         "<leader>ha" = "Add File";
         "<leader>hq" = "Quick Menu";
