@@ -152,6 +152,8 @@
       };
     };
 
+    gitsigns.enable = true;
+
     notify = {
       enable = true;
       stages = "fade";
