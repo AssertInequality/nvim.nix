@@ -56,11 +56,15 @@
         };
       };
       servers = {
-        nil-ls = {
+        # nil-ls = {
+        #   enable = true;
+        #   extraOptions = {
+        #     formatting.__raw = ''{ command = { "nixpkgs-fmt" } }'';
+        #   };
+        # };
+        nixd = {
           enable = true;
-          extraOptions = {
-            formatting.__raw = ''{ command = { "nixpkgs-fmt" } }'';
-          };
+          settings.formatting.command = [ "nixpkgs-fmt" ];
         };
         lua-ls.enable = true;
         tsserver.enable = true;
@@ -92,16 +96,16 @@
               })'';
         };
         sources = [
-        { name = "nvim_lsp"; }
-        { name = "luasnip"; }
-        { name = "path"; }
-        { name = "buffer"; }
+          { name = "nvim_lsp"; }
+          { name = "luasnip"; }
+          { name = "path"; }
+          { name = "buffer"; }
         ];
         snippet.expand = ''
           function(args)
           require('luasnip').lsp_expand(args.body)
           end
-          '';
+        '';
       };
     };
 
@@ -126,12 +130,12 @@
           };
         };
         surround = {
-          add = "gza"; 
-          delete = "gzd"; 
-          find = "gzf"; 
-          find_left = "gzF"; 
-          highlight = "gzh"; 
-          replace = "gzr"; 
+          add = "gza";
+          delete = "gzd";
+          find = "gzf";
+          find_left = "gzF";
+          highlight = "gzh";
+          replace = "gzr";
           update_n_lines = "gzn";
         };
         ai = {
@@ -158,7 +162,7 @@
     lualine = {
       enable = true;
       globalstatus = true;
-      sections.lualine_c = ["filename" "buffers"];
+      sections.lualine_c = [ "filename" "buffers" ];
     };
 
     noice.enable = true;

@@ -1,7 +1,7 @@
 {
-    imports = [
-      ./ui.nix
-      ./dev.nix
-      ./editor.nix
-    ];
+  imports = [
+    ./ui.nix
+    ./dev.nix
+    ./editor.nix
+  ];
 }

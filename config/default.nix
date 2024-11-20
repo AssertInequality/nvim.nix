@@ -1,4 +1,3 @@
-{helpers, ...}:
 {
   imports = [
     ./core.nix

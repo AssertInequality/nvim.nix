@@ -5,93 +5,93 @@
     keymaps = [
       # File Operations
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>ff";
         action.__raw = "vim.lsp.buf.format";
         options.desc = "Format";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>fs";
         options.desc = "Save";
         action = "<cmd>w<CR>";
       }
       # Buffer Operations
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>bc";
         options.desc = "Close Buffer";
         action = "<cmd>bd<CR>";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>bn";
         options.desc = "Next Buffer";
         action = "<cmd>bn<CR>";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>bp";
         options.desc = "Previous Buffer";
         action = "<cmd>bp<CR>";
       }
       # Cursor Movement
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "J";
         action = "mzJ`z";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<C-d>";
         action = "<C-d>zz";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<C-u>";
         action = "<C-u>zz";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "n";
         action = "nzzzv";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "N";
         action = "Nzzzv";
       }
       # Quickfix Navigation
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<C-k>";
         action = "<cmd>cnext<CR>zz";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<C-j>";
         action = "<cmd>cprev<CR>zz";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<C-S-k>";
         action = "<cmd>lnext<CR>zz";
       }
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<C-S-j>";
         action = "<cmd>lprev<CR>zz";
       }
       # PLUGIN : Fugitive
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>gs";
         action = "<cmd>G<CR>";
         options.desc = "Status";
       }
       # PLUGIN : Telescope
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>ps";
         action.__raw = ''
           function()
@@ -101,33 +101,33 @@
       }
       # PLUGIN : Unfotree
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>u";
         action = "<cmd>UndotreeToggle<CR>";
         options.desc = "Undotree Toggle";
       }
       # PLUGIN : Oil
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "-";
         action = "<cmd>Oil<CR>";
         options.desc = "File Browser";
       }
       # PLUGIN : LazyGit
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>gl";
         action = "<cmd>LazyGit<CR>";
         options.desc = "LazyGit";
       }
       ## VISUAL: Move lines up and down
       {
-        mode = ["v"];
+        mode = [ "v" ];
         key = "J";
         action = "<cmd>m '>+1<CR>gv=gv";
       }
       {
-        mode = ["v"];
+        mode = [ "v" ];
         key = "K";
         action = "<cmd>m '<-2<CR>gv=gv";
       }

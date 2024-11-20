@@ -11,7 +11,7 @@
 
     harpoon = {
       enable = true;
-      keymaps ={
+      keymaps = {
         addFile = "<leader>ha";
         toggleQuickMenu = "<leader>hq";
         navNext = "<leader>hn";

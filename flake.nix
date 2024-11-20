@@ -10,26 +10,31 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {
-    nixpkgs,
-    nixvim,
-    flake-utils,
-    ...
-  }: let
-    config = import ./config; # import the module directly
-  in
-    flake-utils.lib.eachDefaultSystem (system: let
+  outputs =
+    { nixpkgs
+    , nixvim
+    , flake-utils
+    , ...
+    }:
+    let
+      config = import ./config; # import the module directly
+    in
+    flake-utils.lib.eachDefaultSystem (system:
+    let
       nixvimLib = nixvim.lib.${system};
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
       };
-    in {
+    in
+    {
       nixosModules = {
-        nixVimModule = {pkgs, ...}: {
-          environment.systemPackages = [(
-            pkgs.callPackage ./package { inherit nixvim config; }
-          )];
+        nixVimModule = { pkgs, ... }: {
+          environment.systemPackages = [
+            (
+              pkgs.callPackage ./package { inherit nixvim config; }
+            )
+          ];
         };
       };
 
