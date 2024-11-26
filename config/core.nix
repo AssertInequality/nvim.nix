@@ -77,22 +77,27 @@
       # Quickfix Navigation
       {
         mode = [ "n" ];
-        key = "<C-k>";
-        action = "<cmd>cnext<CR>zz";
+        key = "<C-S-q>";
+        action = "<cmd>cclose<CR>zz";
       }
       {
         mode = [ "n" ];
         key = "<C-j>";
+        action = "<cmd>cnext<CR>zz";
+      }
+      {
+        mode = [ "n" ];
+        key = "<C-k>";
         action = "<cmd>cprev<CR>zz";
       }
       {
         mode = [ "n" ];
-        key = "<C-S-k>";
+        key = "<C-S-j>";
         action = "<cmd>lnext<CR>zz";
       }
       {
         mode = [ "n" ];
-        key = "<C-S-j>";
+        key = "<C-S-k>";
         action = "<cmd>lprev<CR>zz";
       }
       # PLUGIN : Fugitive
