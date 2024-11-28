@@ -208,6 +208,8 @@
       hlsearch = false;
       incsearch = true;
       colorcolumn = "80";
+      arabic = false;
+      arabicshape = false;
     };
 
     colorschemes.nord = {
