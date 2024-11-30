@@ -6,6 +6,12 @@
       # Editor Operations
       {
         mode = [ "n" ];
+        key = "<leader>qq";
+        action = "<cmd>qa<CR>";
+        options.desc = "Quit All";
+      }
+      {
+        mode = [ "n" ];
         key = "<leader>qa";
         action = "<cmd>qa!<CR>";
         options.desc = "Abort and Quit";
