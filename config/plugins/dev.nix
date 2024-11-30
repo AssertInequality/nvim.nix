@@ -56,15 +56,12 @@
         };
       };
       servers = {
-        # nil-ls = {
-        #   enable = true;
-        #   extraOptions = {
-        #     formatting.__raw = ''{ command = { "nixpkgs-fmt" } }'';
-        #   };
-        # };
         nixd = {
           enable = true;
-          settings.formatting.command = [ "nixpkgs-fmt" ];
+          settings = {
+            formatting.command = [ "nixpkgs-fmt" ];
+            nixpkgs.expr = "import <nixpkgs> {}";
+          };
         };
         lua-ls.enable = true;
         tsserver.enable = true;
