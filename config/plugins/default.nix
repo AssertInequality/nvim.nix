@@ -1,7 +1,5 @@
 {
-  imports = [
-    ./ui.nix
-    ./dev.nix
-    ./editor.nix
-  ];
+  plugins = import ./dev
+    // import ./editor
+    // import ./ui;
 }
