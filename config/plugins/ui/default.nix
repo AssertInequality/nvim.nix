@@ -1,1 +1,2 @@
-import ./which-key.nix
+import ./general.nix
+  // import ./which-key.nix

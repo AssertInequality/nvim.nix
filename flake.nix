@@ -2,9 +2,9 @@
   description = "Personal NixVim Config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
+      url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
@@ -16,9 +16,6 @@
     , flake-utils
     , ...
     }:
-    let
-      config = import ./config; # import the module directly
-    in
     flake-utils.lib.eachDefaultSystem (system:
     let
       nixvimLib = nixvim.lib.${system};
@@ -26,6 +23,7 @@
         inherit system;
         config = { allowUnfree = true; };
       };
+      config = import ./config { inherit pkgs; }; # import the module directly
     in
     {
       nixosModules = {

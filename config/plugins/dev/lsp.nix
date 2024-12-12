@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   lsp = {
     enable = true;
@@ -40,12 +41,15 @@
           nixpkgs.expr = "import <nixpkgs> {}";
         };
       };
-      lua-ls.enable = true;
-      tsserver.enable = true;
+      intelephense = {
+        enable = true;
+        package = pkgs.intelephense;
+      };
+      lua_ls.enable = true;
+      ts_ls.enable = true;
       texlab.enable = true;
       pylsp.enable = true;
       bashls.enable = true;
-      intelephense.enable = true;
     };
   };
 }

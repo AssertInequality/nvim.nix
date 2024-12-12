@@ -30,51 +30,56 @@ in
 {
   lualine = {
     enable = true;
-    theme = nordCustom;
-    globalstatus = true;
-    sections = {
-      lualine_a = [
-        {
-          name = "mode";
-          separator = { left = ""; };
-          padding = {
-            right = 2;
-            left = 1;
-          };
-        }
-      ];
-      lualine_b = [ "filename" ];
-      lualine_c = [
-        {
-          name = "buffers";
-        }
-      ];
-      lualine_x = [
-        "diagnostics"
-        "diff"
-        "branch"
-      ];
-      lualine_y = [ "filetype" "progress" ];
-      lualine_z = [
-        {
-          name = "location";
-          separator = { right = ""; };
-          padding = {
-            right = 1;
-            left = 2;
-          };
-        }
-      ];
+    settings = {
+      options = {
+
+        theme = nordCustom;
+        globalstatus = true;
+        sectionSeparators = { left = ""; right = ""; };
+        componentSeparators = { left = ""; right = ""; };
+      };
+      sections = {
+        lualine_a = [
+          {
+            __unkeyed-1 = "mode";
+            separator = { left = ""; };
+            padding = {
+              right = 2;
+              left = 1;
+            };
+          }
+        ];
+        lualine_b = [ "filename" ];
+        lualine_c = [
+          {
+            __unkeyed-1 = "buffers";
+          }
+        ];
+        lualine_x = [
+          "diagnostics"
+          "diff"
+          "branch"
+        ];
+        lualine_y = [ "filetype" "progress" ];
+        lualine_z = [
+          {
+            __unkeyed-1 = "location";
+            separator = { right = ""; };
+            padding = {
+              right = 1;
+              left = 2;
+            };
+          }
+        ];
+      };
+      inactiveSections = {
+        lualine_a = [ "" ];
+        lualine_b = [ "" ];
+        lualine_c = [ "filename" ];
+        lualine_x = [ "location" ];
+        lualine_y = [ "" ];
+        lualine_z = [ "" ];
+      };
     };
-    inactiveSections = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
-      lualine_c = [ "filename" ];
-      lualine_x = [ "location" ];
-      lualine_y = [ "" ];
-      lualine_z = [ "" ];
-    };
-    sectionSeparators = { left = ""; right = ""; };
-    componentSeparators = { left = ""; right = ""; };
   };
 }
