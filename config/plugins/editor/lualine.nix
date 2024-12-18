@@ -13,8 +13,8 @@ let
   nordCustom = {
     normal = {
       a = { fg = colors.nord1; bg = colors.nord8; gui = "bold"; };
-      b = { fg = colors.nord5; bg = colors.nord1; };
-      c = { fg = colors.nord5; bg = colors.nord3; };
+      b = { fg = colors.nord5; bg = colors.nord3; };
+      c = { fg = colors.nord5; bg = ""; };
     };
     insert = { a = { fg = colors.nord1; bg = colors.nord6; gui = "bold"; }; };
     visual = { a = { fg = colors.nord1; bg = colors.nord7; gui = "bold"; }; };
@@ -32,11 +32,10 @@ in
     enable = true;
     settings = {
       options = {
-
         theme = nordCustom;
         globalstatus = true;
-        sectionSeparators = { left = ""; right = ""; };
-        componentSeparators = { left = ""; right = ""; };
+        section_separators = { left = ""; right = ""; };
+        component_separators = { left = "|"; right = "|"; };
       };
       sections = {
         lualine_a = [
@@ -44,30 +43,34 @@ in
             __unkeyed-1 = "mode";
             separator = { left = ""; };
             padding = {
-              right = 2;
+              right = 1;
               left = 1;
             };
           }
         ];
-        lualine_b = [ "filename" ];
-        lualine_c = [
-          {
-            __unkeyed-1 = "buffers";
-          }
-        ];
+        lualine_b = [{
+          __unkeyed-1 = "filename";
+          separator = { right = ""; };
+          padding = {
+            right = 1;
+            left = 1;
+          };
+        }];
+        lualine_c = [ "" ];
         lualine_x = [
           "diagnostics"
           "diff"
           "branch"
         ];
-        lualine_y = [ "filetype" "progress" ];
+        lualine_y = [ "filetype" ];
         lualine_z = [
+          "progress"
           {
             __unkeyed-1 = "location";
             separator = { right = ""; };
             padding = {
               right = 1;
-              left = 2;
+              left = 1;
             };
           }
         ];
