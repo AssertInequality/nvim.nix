@@ -214,6 +214,7 @@
     colorcolumn = "80";
     arabic = false;
     arabicshape = false;
+    foldenable = false;
   };
 
   colorschemes.nord = {

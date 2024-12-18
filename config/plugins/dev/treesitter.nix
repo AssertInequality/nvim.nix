@@ -1,6 +1,7 @@
 {
   treesitter = {
     enable = true;
+    folding = true;
     settings = {
       ensureInstalled = [
         "vimdoc"
