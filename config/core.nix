@@ -162,6 +162,19 @@
     netrw_browse_split = 0;
     netrw_banner = 0;
     netrw_winsize = 25;
+    clipboard.__raw = ''
+      {
+        name = 'OSC 52',
+        copy = {
+          ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+          ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+        },
+        paste = {
+          ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+          ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+        },
+      }
+    '';
   };
 
   opts = {
