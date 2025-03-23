@@ -10,7 +10,6 @@
         "vim"
         "javascript"
         "typescript"
-        "php"
         "c"
         "regex"
         "bash"

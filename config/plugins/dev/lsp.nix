@@ -41,11 +41,6 @@
           nixpkgs.expr = "import <nixpkgs> {}";
         };
       };
-      # intelephense = {
-      #   enable = true;
-      #   package = pkgs.intelephense;
-      # };
-      phpactor.enable = true;
       lua_ls.enable = true;
       ts_ls.enable = true;
       pylsp.enable = true;
