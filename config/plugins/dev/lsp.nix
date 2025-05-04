@@ -41,6 +41,7 @@
           nixpkgs.expr = "import <nixpkgs> {}";
         };
       };
+      ccls.enable = true;
       lua_ls.enable = true;
       ts_ls.enable = true;
       pylsp.enable = true;
