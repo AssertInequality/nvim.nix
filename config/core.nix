@@ -104,6 +104,19 @@
       key = "<C-S-k>";
       action = "<cmd>lprev<CR>zz";
     }
+    # System Clipboard Management
+    {
+      mode = [ "n" ];
+      key = "<leader>yy";
+      action = ''V"+y'';
+      options.desc = "Copy to clipboard";
+    }
+    {
+      mode = [ "v" ];
+      key = "<leader>y";
+      action = ''"+y'';
+      options.desc = "Copy to clipboard";
+    }
     # PLUGIN : Fugitive
     {
       mode = [ "n" ];

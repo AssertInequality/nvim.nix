@@ -13,6 +13,7 @@
       { __unkeyed-1 = "<leader>hq"; group = "Quick Menu"; }
       { __unkeyed-1 = "<leader>hn"; group = "Next File"; }
       { __unkeyed-1 = "<leader>hp"; group = "Previous File"; }
+      { __unkeyed-1 = "<leader>y"; group = "Clipboard"; }
     ];
   };
 }
