@@ -1,4 +1,4 @@
 {
-  nvim-colorizer.enable = true;
+  colorizer.enable = true;
   lazygit.enable = true;
 }

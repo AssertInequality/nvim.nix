@@ -1,8 +1,10 @@
 {
   notify = {
     enable = true;
-    stages = "fade";
-    timeout = 3000;
-    backgroundColour = "#000000";
+    settings = {
+      stages = "fade";
+      timeout = 3000;
+      background_colour = "#000000";
+    };
   };
 }

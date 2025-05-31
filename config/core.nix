@@ -155,6 +155,32 @@
       action = "<cmd>LazyGit<CR>";
       options.desc = "LazyGit";
     }
+    # PLUGIN : Harpoon
+    {
+      mode = "n";
+      key = "<leader>ha";
+      action.__raw = "function() require'harpoon':list():add() end";
+    }
+    {
+      mode = "n";
+      key = "<leader>hq";
+      action.__raw = "
+        function()
+          require'harpoon'.ui:toggle_quick_menu(require'harpoon':list())
+        end
+      ";
+    }
+    {
+      mode = "n";
+      key = "<leader>hn";
+      action.__raw = "function() require'harpoon':list():next() end";
+    }
+    {
+      mode = "n";
+      key = "<leader>hp";
+      action.__raw = "function() require'harpoon':list():prev() end";
+    }
+
     ## VISUAL: Move lines up and down
     {
       mode = [ "v" ];
