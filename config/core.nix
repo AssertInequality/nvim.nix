@@ -107,8 +107,8 @@
     # System Clipboard Management
     {
       mode = [ "n" ];
-      key = "<leader>yy";
-      action = ''V"+y'';
+      key = "<leader>y";
+      action = ''"+y'';
       options.desc = "Copy to clipboard";
     }
     {
