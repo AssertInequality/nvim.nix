@@ -1,6 +1,6 @@
-{ system, config, nixvim, pkgs, ... }:
+{ config, nixvim, pkgs, stdenv, ... }:
 let
-  nixvim' = nixvim.legacyPackages.${system};
+  nixvim' = nixvim.legacyPackages.${stdenv.hostPlatform.system};
 in
 nixvim'.makeNixvimWithModule {
   inherit pkgs;
