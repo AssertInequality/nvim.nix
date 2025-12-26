@@ -180,6 +180,51 @@
       key = "<leader>hp";
       action.__raw = "function() require'harpoon':list():prev() end";
     }
+    {
+      mode = "n";
+      key = "<leader>h1";
+      action.__raw = "function() require'harpoon':list():select(1) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h2";
+      action.__raw = "function() require'harpoon':list():select(2) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h3";
+      action.__raw = "function() require'harpoon':list():select(3) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h4";
+      action.__raw = "function() require'harpoon':list():select(4) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h5";
+      action.__raw = "function() require'harpoon':list():select(5) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h6";
+      action.__raw = "function() require'harpoon':list():select(6) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h7";
+      action.__raw = "function() require'harpoon':list():select(7) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h8";
+      action.__raw = "function() require'harpoon':list():select(8) end";
+    }
+    {
+      mode = "n";
+      key = "<leader>h9";
+      action.__raw = "function() require'harpoon':list():select(9) end";
+    }
 
     ## VISUAL: Move lines up and down
     {
