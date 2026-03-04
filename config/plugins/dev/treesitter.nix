@@ -1,7 +1,6 @@
 {
   treesitter = {
     enable = true;
-    folding = true;
     settings = {
       ensureInstalled = [
         "vimdoc"
@@ -16,8 +15,10 @@
         "markdown"
         "markdown_inline"
       ];
+      nixvimInjections = false;
+      folding.enable = true;
+      highlight.enable = true;
       indent.enable = true;
-      nixvimInjections = true;
     };
   };
 }

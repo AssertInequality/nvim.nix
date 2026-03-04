@@ -8,3 +8,4 @@
   // import ./notify.nix
   // import ./treesitter.nix
   // import ./ts.nix
+  // import ./otter.nix
