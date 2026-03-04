@@ -2,8 +2,8 @@
   description = "Personal NixVim Config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixvim.url = "github:nix-community/nixvim/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
