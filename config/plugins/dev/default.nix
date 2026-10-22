@@ -1,4 +1,4 @@
-{ pkgs, ... }: import ./general.nix
+{ pkgs, config, ... }: import ./general.nix
   // import ./cmp.nix
   // import ./comment.nix
   // import ./dap.nix
@@ -6,6 +6,6 @@
   // import ./lsp.nix { inherit pkgs; }
   // import ./mini.nix
   // import ./notify.nix
-  // import ./treesitter.nix
+  // import ./treesitter.nix { inherit config; }
   // import ./ts.nix
   // import ./otter.nix
